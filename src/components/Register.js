@@ -15,7 +15,6 @@ const Register = () =>{
 })
 
 const [data,setData] = useState([]);
-    console.log(inpval);
 
     const getdata = (e) => {
       // console.log(e.target.value);
@@ -74,21 +73,26 @@ const [data,setData] = useState([]);
     return(
       <>
      
+     <br></br>
+     <br></br>
+     <br></br>
+
+     <div className='App-header'>
       <form className='login-form'>
-        <label>Username: </label>
+        <h3>Username: </h3>
         <input type='text' name='name' onChange={getdata} placeholder='Username' required />
-        <label>Email: </label>
+        <h3>Email: </h3>
         <input type='email' name='email'  onChange={getdata} placeholder='Email' required/>
-        <label>Password: </label>
+        <h3>Password: </h3>
         <input type='password' name='password'  onChange={getdata} placeholder='Password' required/>
-        <button type='button' onClick={addData}>Register</button>
+        <button type='button' className='login-btn' onClick={addData}>Register</button>
 
       </form>
         <h2> 
         if You have already account: 
-        <button onClick={()=>{history('/')}}>Login</button>
+        <button className='down-login-register-btn' onClick={()=>{history('/')}}>Login</button>
         </h2>
-        
+        </div>
         
       </>
     )

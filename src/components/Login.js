@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import { Link, useNavigate} from 'react-router-dom'
-import Navbar from './Navbar';
+import { useNavigate} from 'react-router-dom'
  
 const Login = () =>{
    const history = useNavigate();
@@ -15,8 +14,6 @@ const getData = (e) => {
   // console.log(e.target.value);
 
   const { value, name } = e.target;
-
-  console.log(value,name);
 
 
   setInpval(() => {
@@ -63,7 +60,6 @@ const addData = (e) => {
           if (userlogin.length === 0) {
               alert("invalid details")
           } else {
-              console.log("user login succesfulyy");
 
               localStorage.setItem("user_login", JSON.stringify(userlogin))
               localStorage.setItem("loginStatus", true);
@@ -77,19 +73,24 @@ const addData = (e) => {
     return(
 
       <> 
-        <form  className='login-form'>
-          <label>Enter Email</label>
-          <input type='email'  name='email' onChange={getData}  />
+      <br></br>
+      <br></br>
+      <br></br>
+ <div className='App-header'>
+        <form  className='login-form ' >
+          <h3>Enter Email</h3>
+          <input type='email' placeholder='Email'  name='email' onChange={getData}  />
 
-          <label>Enter Password</label>
-          <input type='password'  name='password' onChange={getData}  />
+          <h3>Enter Password</h3>
+          <input type='password' placeholder='password' name='password' onChange={getData}  />
 
-          <button type='button' onClick={addData}>Login</button>
+          <button type='button' className='login-btn' onClick={addData}>Login</button>
         </form>
         <h2>  
           you haven't account:  
-        <button onClick={()=>{history('/register')}}>Register</button>
+        <button className='down-login-register-btn' onClick={()=>{history('/register')}}>Register</button>
         </h2>
+        </div>
       </>
     )
 }

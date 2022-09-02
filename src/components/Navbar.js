@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
     const history = useNavigate();
     const status = localStorage.getItem('loginStatus');
-    console.log(status)
 
     const logout = () => {
         localStorage.setItem('loginStatus', false);
@@ -24,7 +23,8 @@ const Navbar = () => {
                     status ?
                         <>
                             <li><Link to='/home'>Home</Link></li>
-                            <li><Link to='/learn'>Learn</Link></li>
+                            <li><Link to='/appointment'>Appoiment</Link></li>
+                            {/* <li><Link to='/createAppoint'>Create Appointment</Link></li> */}
                             <li onClick={logout}>Logout</li>
                         </>
                         :
